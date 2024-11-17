@@ -1,0 +1,86 @@
+/* Base styles for the body */
+body {
+    font-family: Arial, sans-serif; /* Font family for the entire page */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    background-color: #f4f4f4; /* Light gray background color */
+}
+
+/* Header styles */
+header {
+    background: #35424a; /* Dark gray background for the header */
+    color: #ffffff; /* White text color */
+    padding: 10px 20px; /* Padding around the header */
+    text-align: center; /* Center align text */
+}
+
+/* Navigation styles */
+nav ul {
+    list-style: none; /* Remove bullet points from list */
+    padding: 0; /* Remove default padding */
+}
+
+nav ul li {
+    display: inline; /* Display list items inline */
+    margin: 0 10px; /* Margin between list items */
+}
+
+nav ul li a {
+    color: #ffffff; /* White text color for links */
+    text-decoration: none; /* Remove underline from links */
+    transition: color 0.3s; /* Smooth transition for hover effect */
+}
+
+/* Navigation link hover effect */
+nav ul li a:hover {
+    color: #ffcc00; /* Change color on hover */
+}
+
+/* Main content area styles */
+main {
+    padding: 20px; /* Padding around the main content */
+}
+
+/* Section styles */
+section {
+    margin: 20px 0; /* Margin above and below sections */
+    padding: 20px; /* Padding inside sections */
+    background: #ffffff; /* White background for sections */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+}
+
+/* Footer styles */
+footer {
+    text-align: center; /* Center align text in footer */
+    padding: 10px 0; /* Padding around footer */
+    background: #35424a; /* Dark gray background for footer */
+    color: #ffffff; /* White text color */
+    position: relative; /* Position relative to allow for future adjustments */
+    bottom: 0; /* Align footer to the bottom */
+    width: 100%; /* Full width footer */
+}
+
+/* Additional styles for file upload status */
+#uploadStatus {
+    margin-top: 10px; /* Margin above the upload status */
+    color: green; /* Green text color for success messages */
+}
+
+/* Styles for the file list */
+#fileList {
+    margin-top: 10px; /* Margin above the file list */
+    padding: 0; /* Remove default padding */
+    list-style-type: none; /* Remove bullet points */
+}
+
+/* Styles for individual file list items */
+#fileList li {
+    padding: 5px; /* Padding for each file item */
+    border-bottom: 1px solid #ccc; /* Light gray border below each item */
+}
+
+/* Hover effect for file list items */
+#fileList li:hover {
+    background-color: #f0f0f0; /* Light gray background on hover */
+}

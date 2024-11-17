@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Cloud Storage</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Basic styles for the page */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background: #007BFF;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        main {
+            padding: 20px;
+        }
+        section {
+            margin: 20px 0;
+            padding: 20px;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background: #007BFF;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        #uploadStatus {
+            margin-top: 10px;
+            color: green;
+        }
+        #fileList {
+            margin-top: 10px;
+            padding: 0;
+            list-style-type: none;
+        }
+        #fileList li {
+            padding: 5px;
+            border-bottom: 1px solid #ccc;
+        }
+        #fileList li:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Personal Cloud Storage</h1>
+        <nav>
+            <ul>
+                <li><a href="#upload">Upload</a></li>
+                <li><a href="#files">My Files</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="upload">
+            <h2>Upload Files</h2>
+            <input type="file" id="fileInput" multiple>
+            <button onclick="uploadFiles()">Upload</button>
+            <div id="uploadStatus"></div>
+        </section>
+        <section id="files">
+            <h2>My Files</h2>
+            <ul id="fileList"></ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 My Personal Cloud Storage</p>
+    </footer>
+    <script>
+        // Function to handle file uploads
+        function uploadFiles() {
+            const fileInput = document.getElementById('fileInput');
+            const fileList = document.getElementById('fileList');
+            const uploadStatus = document.getElementById('uploadStatus');
+            const files = fileInput.files;
+
+            // Clear previous upload status
+            uploadStatus.innerHTML = '';
+            fileList.innerHTML = '';
+
+            if (files.length === 0) {
+                uploadStatus.innerHTML = 'No files selected for upload.';
+                return;
+            }
+
+            // Display uploaded files
+            for (let i = 0; i < files.length; i++) {
+                const listItem = document.createElement('li');
+                const fileURL = URL.createObjectURL(files[i]); // Create a URL for the file
+                listItem.innerHTML = `<a href="${fileURL}" target="_blank">${files[i].name}</a>`;
+                fileList.appendChild(listItem);
+            }
+
+            uploadStatus.innerHTML = 'Files uploaded successfully!';
+        }
+    </script>
+</body>
+</html>
